@@ -1,0 +1,3 @@
+[submodule "Dependencies/S51"]
+	path = Dependencies/S51
+	url = git@github.com:cosh/S51.git
