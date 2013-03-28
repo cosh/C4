@@ -1,7 +1,7 @@
 INCLUDE_DIRECTORIES(../include/)
 
 SET(C4_SRC ${C4_SRC}
-  c4.cxx
+  KeyKeyValueStore.cpp
 )
 
 ADD_LIBRARY(C4 ${C4_SRC})
