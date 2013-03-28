@@ -35,7 +35,7 @@
 class KeyKeyValueStore {
 public:
 
-	const int * const  GetIntegerValue(const long rowId, const short columnId);
+	const int GetIntegerValue(const long rowId, const short columnId);
 
 	const std::string * const GetStringValue(const long rowId, const short columnId);
 

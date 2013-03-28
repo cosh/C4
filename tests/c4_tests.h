@@ -1,1 +1,1 @@
-#define TEST(name) static int name(C4 *c4) 
+#define TEST(name) static int name(KeyKeyValueStore *c4)
