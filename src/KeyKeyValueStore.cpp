@@ -26,3 +26,56 @@
 
 #include "KeyKeyValueStore.h"
 
+KeyKeyValueStore::KeyKeyValueStore(int compactionInterval) {
+}
+
+void KeyKeyValueStore::Create(const long rowId, const short columnId,
+		const char* value, const int ttl) {
+}
+
+const char* const KeyKeyValueStore::Get(const long rowId,
+		const short columnId) {
+
+	const char result[] = { "Hello World\n" };
+
+	const char *p1 = result;
+
+	return 0;
+}
+
+const int KeyKeyValueStore::GetAsInteger(const long rowId,
+		const short columnId) {
+
+	const int result = 0;
+
+	return result;
+}
+
+const double KeyKeyValueStore::GetAsDouble(const long rowId,
+		const short columnId) {
+
+	const double result = 0.0;
+
+	return result;
+}
+
+void KeyKeyValueStore::Tombstone(const long rowId, const short columnId) {
+}
+
+void KeyKeyValueStore::Tombstone(const long rowId) {
+}
+
+void KeyKeyValueStore::Compact() {
+}
+
+void KeyKeyValueStore::TabulaRasa() {
+}
+
+void KeyKeyValueStore::Save(const char* path) {
+}
+
+void KeyKeyValueStore::Load(const char* path) {
+}
+
+void KeyKeyValueStore::Shutdown() {
+}

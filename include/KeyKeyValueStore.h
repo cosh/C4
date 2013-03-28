@@ -35,17 +35,30 @@
 class KeyKeyValueStore {
 public:
 
-	const int GetIntegerValue(const long rowId, const short columnId);
+	explicit KeyKeyValueStore(int compactionInterval);
 
-	const std::string * const GetStringValue(const long rowId, const short columnId);
+	void Create(const long rowId, const short columnId,
+			const char* value, const int ttl = 0);
 
-	void SetIntegerValue(const long rowId, const short columnId, const int value);
+	const char * const Get(const long rowId, const short columnId);
 
-	void SetStringValue(const long rowId, const short columnId, const std::string value);
+	const int GetAsInteger(const long rowId, const short columnId);
 
-	void DeleteIntegerValue(const long rowId, const short columnId);
+	const double GetAsDouble(const long rowId, const short columnId);
 
-	void DeleteStringValue(const long rowId, const short columnId);
+	void Tombstone(const long rowId, const short columnId);
+
+	void Tombstone(const long rowId);
+
+	void Compact();
+
+	void TabulaRasa();
+
+	void Save(const char* path);
+
+	void Load(const char* path);
+
+	void Shutdown();
 };
 
 #endif /* KEYKEYVALUESTORE_H_ */
