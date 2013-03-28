@@ -25,6 +25,8 @@
  */
 
 #include "KeyKeyValueStore.h"
+#include <ostream>
+#include <istream>
 
 KeyKeyValueStore::KeyKeyValueStore(int compactionInterval) {
 }
@@ -71,10 +73,10 @@ void KeyKeyValueStore::Compact() {
 void KeyKeyValueStore::TabulaRasa() {
 }
 
-void KeyKeyValueStore::Save(const char* path) {
+void KeyKeyValueStore::Save(const std::ostream* path) {
 }
 
-void KeyKeyValueStore::Load(const char* path) {
+void KeyKeyValueStore::Load(const std::istream* inputStream) {
 }
 
 void KeyKeyValueStore::Shutdown() {

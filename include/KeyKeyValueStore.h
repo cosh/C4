@@ -27,7 +27,8 @@
 #ifndef KEYKEYVALUESTORE_H_
 #define KEYKEYVALUESTORE_H_
 
-#include <string>
+#include <ostream>
+#include <istream>
 
 /*
  *
@@ -54,9 +55,9 @@ public:
 
 	void TabulaRasa();
 
-	void Save(const char* path);
+	void Save(const std::ostream* outputStream);
 
-	void Load(const char* path);
+	void Load(const std::istream* inputStream);
 
 	void Shutdown();
 };
