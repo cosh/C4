@@ -25,6 +25,7 @@ ELSE(CPack_CMake_INCLUDED)
   SET(CPack_CMake_INCLUDED 1)
 ENDIF(CPack_CMake_INCLUDED)
 
+ADD_SUBDIRECTORY(doxygen)
 ADD_SUBDIRECTORY(src build-src)
 ADD_SUBDIRECTORY(tests build-tests)
 ADD_SUBDIRECTORY(include build-include)
