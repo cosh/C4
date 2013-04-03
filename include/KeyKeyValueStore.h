@@ -27,13 +27,11 @@
 #ifndef KEYKEYVALUESTORE_H_
 #define KEYKEYVALUESTORE_H_
 
-#include <ostream>
-#include <istream>
-
 /*
  *
  */
 class KeyKeyValueStore {
+
 public:
 
 	explicit KeyKeyValueStore(int compactionInterval);
@@ -46,7 +44,7 @@ public:
 	const int GetAsInteger(const long rowId, const short columnId);
 
 	const double GetAsDouble(const long rowId, const short columnId);
-
+ 
 	void Tombstone(const long rowId, const short columnId);
 
 	void Tombstone(const long rowId);
@@ -55,9 +53,9 @@ public:
 
 	void TabulaRasa();
 
-	void Save(const std::ostream* outputStream);
+	void Save(const char* outputStream);
 
-	void Load(const std::istream* inputStream);
+	void Load(const char* inputStream);
 
 	void Shutdown();
 };
