@@ -30,6 +30,8 @@
 /*
  *
  */
+
+template <class T>
 class KeyKeyValueStore {
 
 public:
@@ -37,14 +39,10 @@ public:
 	explicit KeyKeyValueStore(int compactionInterval);
 
 	void Create(const long rowId, const short columnId,
-			const char* value, const int ttl = 0);
+			const T* value, const int ttl = 0);
 
-	const char * const Get(const long rowId, const short columnId);
+	const T* const Get(const long rowId, const short columnId);
 
-	const int GetAsInteger(const long rowId, const short columnId);
-
-	const double GetAsDouble(const long rowId, const short columnId);
- 
 	void Tombstone(const long rowId, const short columnId);
 
 	void Tombstone(const long rowId);
