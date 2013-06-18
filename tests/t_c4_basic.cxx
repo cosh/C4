@@ -21,7 +21,7 @@ TEST(test_c4_basic_2) {
 
 int main() {
         int err = 0;
-        KeyKeyValueStore<boost::any> *c4;
+        KeyKeyValueStore<boost::any>* c4 = new KeyKeyValueStore<boost::any>(23);
 
         test_c4_basic_1(c4);
         test_c4_basic_2(c4);

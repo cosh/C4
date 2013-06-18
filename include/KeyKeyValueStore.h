@@ -31,15 +31,22 @@
  *
  */
 
-template <class T>
+template<class T>
 class KeyKeyValueStore {
+
+private:
+
+	int _compactionInterval;
 
 public:
 
-	explicit KeyKeyValueStore(int compactionInterval);
+	explicit KeyKeyValueStore(int compactionInterval) :
+			_compactionInterval(compactionInterval) {
 
-	void Create(const long rowId, const short columnId,
-			const T* value, const int ttl = 0);
+	}
+
+	void Create(const long rowId, const short columnId, const T* value,
+			const int ttl = 0);
 
 	const T* const Get(const long rowId, const short columnId);
 

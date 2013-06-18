@@ -27,10 +27,6 @@
 #include "KeyKeyValueStore.h"
 
 template <class T>
-KeyKeyValueStore<T>::KeyKeyValueStore(int compactionInterval) {
-}
-
-template <class T>
 void KeyKeyValueStore<T>::Create(const long rowId, const short columnId,
 		const T* value, const int ttl) {
 }
