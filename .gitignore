@@ -22,6 +22,7 @@ CPackConfig.cmake
 CPackSourceConfig.cmake
 DartConfiguration.tcl
 Testing/*
+Dependencies/Testing/*
 build-tests/*
 doc/*
 doxygen/Doxyfile
