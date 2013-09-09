@@ -5,6 +5,7 @@
 #include <errno.h>
 #include "c4_tests.h"
 #include "KeyKeyValueStore.h"
+#include "KeyKeyValueStore.tpp"
 #include <boost/any.hpp>
 
 TEST(test_c4_basic_1) {
@@ -21,7 +22,7 @@ TEST(test_c4_basic_2) {
 
 int main() {
         int err = 0;
-        KeyKeyValueStore<boost::any>* c4 = new KeyKeyValueStore<boost::any>(23);
+        KeyKeyValueStore<boost::any, long, short>* c4 = new KeyKeyValueStore<boost::any, long, short>(23);
 
         test_c4_basic_1(c4);
         test_c4_basic_2(c4);

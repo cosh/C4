@@ -26,42 +26,4 @@
 
 #include "KeyKeyValueStore.h"
 
-template <class T>
-void KeyKeyValueStore<T>::Create(const long rowId, const short columnId,
-		const T* value, const int ttl) {
-}
 
-template <class T>
-const T* const KeyKeyValueStore<T>::Get(const long rowId,
-		const short columnId) {
-
-	return 0;
-}
-
-template <class T>
-void KeyKeyValueStore<T>::Tombstone(const long rowId, const short columnId) {
-}
-
-template <class T>
-void KeyKeyValueStore<T>::Tombstone(const long rowId) {
-}
-
-template <class T>
-void KeyKeyValueStore<T>::Compact() {
-}
-
-template <class T>
-void KeyKeyValueStore<T>::TabulaRasa() {
-}
-
-template <class T>
-void KeyKeyValueStore<T>::Save(const char* path) {
-}
-
-template <class T>
-void KeyKeyValueStore<T>::Load(const char* inputStream) {
-}
-
-template <class T>
-void KeyKeyValueStore<T>::Shutdown() {
-}

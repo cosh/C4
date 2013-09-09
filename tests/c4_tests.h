@@ -1,1 +1,1 @@
-#define TEST(name) static int name(KeyKeyValueStore<boost::any> *c4)
+#define TEST(name) static int name(KeyKeyValueStore<boost::any, long, short> *c4)

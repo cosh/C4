@@ -5,5 +5,6 @@ MACRO(C4_TEST name)
 ENDMACRO(C4_TEST name)
 
 INCLUDE_DIRECTORIES(../include/)
+INCLUDE_DIRECTORIES(../src/)
 
 C4_TEST(t_c4_basic)

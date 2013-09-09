@@ -31,7 +31,7 @@
  *
  */
 
-template<class T>
+template<class TValue, class TRowId, class TColumnId>
 class KeyKeyValueStore {
 
 private:
@@ -45,14 +45,14 @@ public:
 
 	}
 
-	void Create(const long rowId, const short columnId, const T* value,
+	void Create(const TRowId rowId, const TColumnId columnId, const TValue* value,
 			const int ttl = 0);
 
-	const T* const Get(const long rowId, const short columnId);
+	const TValue* const Get(const TRowId rowId, const TColumnId columnId);
 
-	void Tombstone(const long rowId, const short columnId);
+	void Tombstone(const TRowId rowId, const TColumnId columnId);
 
-	void Tombstone(const long rowId);
+	void Tombstone(const TRowId rowId);
 
 	void Compact();
 
