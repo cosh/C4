@@ -27,10 +27,13 @@
 #ifndef C4_H_
 #define C4_H_
 
-/*
+/**
+ * C4 is an in memory column store
  *
+ * TValue: The type of the values in the columns
+ * TRowId: The type of the row identifier
+ * TColumnId: The type of the column identifier
  */
-
 template<class TValue, class TRowId, class TColumnId>
 class C4 {
 
@@ -61,20 +64,53 @@ public:
 			const int ttl = 0);
 
 
-	bool Get(const TRowId rowId, const TColumnId columnId, TValue* outResult);
+	/**
+	 * Tries to get a column in a row
+	 * @param rowId The row identifier
+	 * @param columnId The column identifier
+	 * @param outResult The resulting value if it exists
+	 * @return True if the value has been found, otherwise false
+	 */
+	bool TryGet(const TRowId rowId, const TColumnId columnId, TValue* outResult);
 
+	/**
+	 * Tombstones a column in a row. Tomestones are finally deleted in the next compaction.
+	 * @param rowId The row identifier
+	 * @param columnId The column identifier
+	 */
 	void Tombstone(const TRowId rowId, const TColumnId columnId);
 
+	/**
+	 * Tombstones a row. Tomestones are finally deleted in the next compaction.
+	 * @param rowId The row identifier
+	 */
 	void Tombstone(const TRowId rowId);
 
+	/**
+	 * Executes a compaction
+	 */
 	void Compact();
 
+	/**
+	 * Cleares the column store
+	 */
 	void TabulaRasa();
 
+	/**
+	 * Saves the column store
+	 * @param outputStream The output stream
+	 */
 	void Save(const char* outputStream);
 
+	/**
+	 * Loads the columnstore
+	 * @param inputStream The input stream
+	 */
 	void Load(const char* inputStream);
 
+	/**
+	 * Shutdown
+	 */
 	void Shutdown();
 };
 

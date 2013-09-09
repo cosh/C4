@@ -33,8 +33,9 @@ void C4<TValue, TRowId, TColumnId>::InsertOrUpdate(
 }
 
 template<class TValue, class TRowId, class TColumnId>
-bool C4<TValue, TRowId, TColumnId>::Get(
+bool C4<TValue, TRowId, TColumnId>::TryGet(
 		const TRowId rowId, const TColumnId columnId, TValue* outResult) {
+	return true;
 }
 
 template<class TValue, class TRowId, class TColumnId>
