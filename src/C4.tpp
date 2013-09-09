@@ -1,5 +1,5 @@
 /*
- * KeyKeyValueStore.tpp
+ * C4.tpp
  *
  *  Created on: 09.09.2013
  *      Author: cosh
@@ -24,47 +24,47 @@
 
  */
 
-#include "KeyKeyValueStore.h"
+#include "C4.h"
 
 template<class TValue, class TRowId, class TColumnId>
-void KeyKeyValueStore<TValue, TRowId, TColumnId>::Create(
+void C4<TValue, TRowId, TColumnId>::InsertOrUpdate(
 		const TRowId rowId, const TColumnId columnId, const TValue* value,
 		const int ttl) {
 }
 
 template<class TValue, class TRowId, class TColumnId>
-const TValue* const KeyKeyValueStore<TValue, TRowId, TColumnId>::Get(
+bool C4<TValue, TRowId, TColumnId>::Get(
+		const TRowId rowId, const TColumnId columnId, TValue* outResult) {
+}
+
+template<class TValue, class TRowId, class TColumnId>
+void C4<TValue, TRowId, TColumnId>::Tombstone(
 		const TRowId rowId, const TColumnId columnId) {
 }
 
 template<class TValue, class TRowId, class TColumnId>
-void KeyKeyValueStore<TValue, TRowId, TColumnId>::Tombstone(
-		const TRowId rowId, const TColumnId columnId) {
-}
-
-template<class TValue, class TRowId, class TColumnId>
-void KeyKeyValueStore<TValue, TRowId, TColumnId>::Tombstone(
+void C4<TValue, TRowId, TColumnId>::Tombstone(
 		const TRowId rowId) {
 }
 
 template<class TValue, class TRowId, class TColumnId>
-void KeyKeyValueStore<TValue, TRowId, TColumnId>::Compact() {
+void C4<TValue, TRowId, TColumnId>::Compact() {
 }
 
 template<class TValue, class TRowId, class TColumnId>
-void KeyKeyValueStore<TValue, TRowId, TColumnId>::TabulaRasa() {
+void C4<TValue, TRowId, TColumnId>::TabulaRasa() {
 }
 
 template<class TValue, class TRowId, class TColumnId>
-void KeyKeyValueStore<TValue, TRowId, TColumnId>::Save(
+void C4<TValue, TRowId, TColumnId>::Save(
 		const char* outputStream) {
 }
 
 template<class TValue, class TRowId, class TColumnId>
-void KeyKeyValueStore<TValue, TRowId, TColumnId>::Load(
+void C4<TValue, TRowId, TColumnId>::Load(
 		const char* inputStream) {
 }
 
 template<class TValue, class TRowId, class TColumnId>
-void KeyKeyValueStore<TValue, TRowId, TColumnId>::Shutdown() {
+void C4<TValue, TRowId, TColumnId>::Shutdown() {
 }

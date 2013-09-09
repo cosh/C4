@@ -1,5 +1,5 @@
 /*
- * KeyKeyValueStore.h
+ * C4.h
  *
  *  Created on: 25.03.2013
  *      Author: cosh
@@ -24,15 +24,15 @@
 
  */
 
-#ifndef KEYKEYVALUESTORE_H_
-#define KEYKEYVALUESTORE_H_
+#ifndef C4_H_
+#define C4_H_
 
 /*
  *
  */
 
 template<class TValue, class TRowId, class TColumnId>
-class KeyKeyValueStore {
+class C4 {
 
 private:
 
@@ -40,15 +40,28 @@ private:
 
 public:
 
-	explicit KeyKeyValueStore(int compactionInterval) :
+	/**
+	 * Creates a new column store
+	 * @param compactionInterval The interval that the columnstore should be compacted
+	 */
+	explicit C4(int compactionInterval) :
 			_compactionInterval(compactionInterval) {
 
 	}
 
-	void Create(const TRowId rowId, const TColumnId columnId, const TValue* value,
+	/**
+	 * Inserts or updates a new row including the corresponding column with a new value
+	 *
+	 * @param rowId The row identifier
+	 * @param columnId The column identifier
+	 * @param value The to be inserted/updated value
+	 * @param ttl The time to live of the value
+	 */
+	void InsertOrUpdate(const TRowId rowId, const TColumnId columnId, const TValue* value,
 			const int ttl = 0);
 
-	const TValue* const Get(const TRowId rowId, const TColumnId columnId);
+
+	bool Get(const TRowId rowId, const TColumnId columnId, TValue* outResult);
 
 	void Tombstone(const TRowId rowId, const TColumnId columnId);
 
@@ -65,4 +78,4 @@ public:
 	void Shutdown();
 };
 
-#endif /* KEYKEYVALUESTORE_H_ */
+#endif /* C4_H_ */

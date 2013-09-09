@@ -1,5 +1,5 @@
 INSTALL(FILES  
-        KeyKeyValueStore.h
+        C4.h
         DESTINATION include/
         )
 
