@@ -69,5 +69,37 @@ service C4 {
 	 * Tombstones a row. Tomestones are finally deleted in the next compaction.
 	 */
 	oneway void Tombstone(1:required TRowKey rowId)
-                throws (1:InvalidRequestException ire),
+                throws (1:InvalidRequestException ire)
+}
+
+#
+# c4 admin service api
+#
+service C4Admin {
+	/**
+	 * Executes a compaction
+	 */
+	oneway void Compact(),
+
+	/**
+	 * Cleares the column store
+	 */
+	oneway void TabulaRasa(),
+
+	/**
+	 * Saves the column store
+	 */
+	oneway void Save(1:required string outputStream)
+				throws (1:InvalidRequestException ire),
+
+	/**
+	 * Loads the columnstore
+	 */
+	oneway void Load(1:required string inputStream)
+				throws (1:InvalidRequestException ire),
+
+	/**
+	 * Shutdown
+	 */
+	oneway void Shutdown()
 }
