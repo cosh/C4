@@ -44,7 +44,7 @@ service C4 {
 	 * Inserts or updates a new row including the corresponding column with a new value
 	 *
  	*/
-	oneway void InsertOrUpdate(1:required TRowKey rowId, 
+	void InsertOrUpdate(1:required TRowKey rowId, 
 			   	   2:required TColumnKey columnId, 
 			   	   3:required TValue value,
 			   	   4:required TTTL ttl=0)
@@ -61,14 +61,14 @@ service C4 {
 	/**
 	 * Tombstones a column in a row. Tomestones are finally deleted in the next compaction.
 	 */
-	oneway void Tombstone(1:required TRowKey rowId, 
+	void TombstoneColumn(1:required TRowKey rowId, 
                    	      2:required TColumnKey columnId)
                 throws (1:InvalidRequestException ire),
 
 	/**
 	 * Tombstones a row. Tomestones are finally deleted in the next compaction.
 	 */
-	oneway void Tombstone(1:required TRowKey rowId)
+	void TombstoneRow(1:required TRowKey rowId)
                 throws (1:InvalidRequestException ire)
 }
 
@@ -89,13 +89,13 @@ service C4Admin {
 	/**
 	 * Saves the column store
 	 */
-	oneway void Save(1:required string outputStream)
+	void Save(1:required string outputStream)
 				throws (1:InvalidRequestException ire),
 
 	/**
 	 * Loads the columnstore
 	 */
-	oneway void Load(1:required string inputStream)
+	void Load(1:required string inputStream)
 				throws (1:InvalidRequestException ire),
 
 	/**
